@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.lomo.R;
+import com.lomo.utils.GlideUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,8 @@ import java.util.List;
  * Created by linjunjie on 2016/11/11.
  */
 
-public class ImageGallery extends RelativeLayout implements OnPageChangeListener {
+public class ImageGallery extends RelativeLayout implements OnPageChangeListener{
+    private static final String TAG = "ImageGallery";
     private Context mContext;
     private ViewPager vpImages;
     private LinearLayout llIndicator;
@@ -110,18 +112,17 @@ public class ImageGallery extends RelativeLayout implements OnPageChangeListener
         if (mShowIndicator) {
             setIndicator(position);
         }
-        if (position == mAllViews.size() - 1) {
-            // 如果是最后一张图片，则返回第一张图片
-            vpImages.setCurrentItem(0);
-        }
+//        if (position == mAllViews.size()) {
+//            // 如果是最后一张图片，则返回第一张图片
+//            vpImages.setCurrentItem(0);
+//        }
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
-
     }
 
-    public void show(List<String> imgUrls) {
+    public void show(List<String> imgUrls, int defRes) {
         // 底部indicator
         mIndicators = new ImageView[imgUrls.size()];
         for (int i = 0;i < imgUrls.size();i++) {
@@ -129,7 +130,19 @@ public class ImageGallery extends RelativeLayout implements OnPageChangeListener
             imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewPager.LayoutParams.WRAP_CONTENT,
                     LayoutParams.WRAP_CONTENT));
             mIndicators[i] = imageView;
-            setIndicator(i);
+            if (i == 0) {
+                if (null == mIndicatorSelected) {
+                    mIndicators[i].setImageResource(R.drawable.ic_guidance_selected);
+                } else {
+                    mIndicators[i].setImageDrawable(mIndicatorSelected);
+                }
+            } else {
+                if (null == mIndicatorUnSelected) {
+                    mIndicators[i].setImageResource(R.drawable.ic_guidance_unselected);
+                } else {
+                    mIndicators[i].setImageDrawable(mIndicatorUnSelected);
+                }
+            }
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
                     LayoutParams.WRAP_CONTENT);
             layoutParams.leftMargin = 5;
@@ -142,8 +155,8 @@ public class ImageGallery extends RelativeLayout implements OnPageChangeListener
         for (int i = 0;i < imgUrls.size();i++) {
             ImageView iv = new ImageView(mContext);
             mImgs[i] = iv;
-            // TODO 图片缓存框架载入图片
-
+            // 图片缓存框架载入图片
+            GlideUtil.setImage(iv, imgUrls.get(i), defRes, defRes);
             mAllViews.add(iv);
         }
 
