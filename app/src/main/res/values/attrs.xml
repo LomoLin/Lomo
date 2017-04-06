@@ -14,4 +14,21 @@
         <attr name="endLine" format="color|reference" />
         <attr name="lineSize" format="dimension" />
     </declare-styleable>
+    <!--刮刮卡-->
+    <declare-styleable name="ScratchCard">
+        <!-- 底层文字-->
+        <attr name="scratchText" format="string"></attr>
+        <!-- 底层文字大小-->
+        <attr name="scratchTextSize" format="dimension"></attr>
+        <!-- 底层文字颜色-->
+        <attr name="scratchTextColor" format="color"></attr>
+        <!-- 遮盖层颜色 -->
+        <attr name="coverColor" format="color"></attr>
+        <!-- 遮盖层图片 -->
+        <attr name="coverImageResourse" format="reference"></attr>
+        <!-- 遮盖层图片放置模式 -->
+        <attr name="coverImageGravity" format="enum"></attr>
+        <!-- 刮刮卡线条宽度 -->
+        <attr name="eraser_width" format="dimension"></attr>
+    </declare-styleable>
 </resources>
