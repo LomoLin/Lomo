@@ -30,4 +30,7 @@ dependencies {
     compile 'jp.wasabeef:glide-transformations:2.0.1'
     compile 'io.reactivex:rxjava:1.2.9'
     compile 'io.reactivex:rxandroid:1.2.1'
+    compile files('libs/mta-sdk-1.6.2.jar')
+    compile files('libs/open_sdk_r5788.jar')
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
 }
