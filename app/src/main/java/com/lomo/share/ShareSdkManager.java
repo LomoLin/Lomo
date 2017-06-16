@@ -1,12 +1,11 @@
 package com.lomo.share;
 
+import android.app.Activity;
 import android.content.Intent;
 
-import com.haomawang.base.BaseActivity;
-import com.haomawang.base.contact.ContactsUtils;
-import com.haomawang.base.sharesdk.qq.TencentManager;
-import com.haomawang.base.sharesdk.system.SystemManager;
-import com.haomawang.base.sharesdk.wechat.WeChatManager;
+import com.lomo.share.qq.TencentManager;
+import com.lomo.share.system.SystemManager;
+import com.lomo.share.wechat.WeChatManager;
 
 /**
  * @desc
@@ -17,16 +16,16 @@ import com.haomawang.base.sharesdk.wechat.WeChatManager;
 public class ShareSdkManager implements IShare {
 
     private volatile static ShareSdkManager _Instance = null;
-    private BaseActivity mActivity;
+    private Activity mActivity;
     private IShare mShareManager;
 
-    private ShareSdkManager(BaseActivity activity) {
+    private ShareSdkManager(Activity activity) {
         this.mActivity = activity;
     }
 
-    public static ShareSdkManager getInstance(BaseActivity activity) {
+    public static ShareSdkManager getInstance(Activity activity) {
         if (_Instance == null) {
-            synchronized (ContactsUtils.class) {
+            synchronized (ShareSdkManager.class) {
                 if (_Instance == null) {
                     _Instance = new ShareSdkManager(activity);
                 }

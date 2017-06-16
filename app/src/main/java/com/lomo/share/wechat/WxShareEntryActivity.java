@@ -5,9 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.haomawang.base.sharesdk.ShareListener;
-import com.haomawang.base.sharesdk.ShareResult;
-import com.haomawang.base.sharesdk.ShareSdkConstant;
+import com.lomo.share.ShareListener;
+import com.lomo.share.ShareResult;
+import com.lomo.share.ShareSdkConstant;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;

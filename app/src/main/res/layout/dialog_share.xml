@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="shareDialogViewModel"
+            type="com.lomo.share.dialog.ShareDialogViewModel"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/icon_share_wechat"
+            android:gravity="center_horizontal"
+            android:onClick="@{shareDialogViewModel.shareWechatFriend}"
+            android:text="微信"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/icon_share_wechat_timeline"
+            android:gravity="center_horizontal"
+            android:onClick="@{shareDialogViewModel.shareWechatTimeline}"
+            android:text="朋友圈"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/icon_share_qq"
+            android:gravity="center_horizontal"
+            android:onClick="@{shareDialogViewModel.shareQQFriend}"
+            android:text="QQ"/>
+
+    </LinearLayout>
+
+</layout>

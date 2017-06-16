@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -33,4 +36,5 @@ dependencies {
     compile files('libs/mta-sdk-1.6.2.jar')
     compile files('libs/open_sdk_r5788.jar')
     compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    compile 'com.kelin.mvvmlight:library:1.0.0'
 }
