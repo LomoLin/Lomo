@@ -7,6 +7,8 @@ import com.lomo.share.qq.TencentManager;
 import com.lomo.share.system.SystemManager;
 import com.lomo.share.wechat.WeChatManager;
 
+import java.lang.ref.SoftReference;
+
 /**
  * @desc
  * @autor ZhuangXiong
@@ -16,11 +18,11 @@ import com.lomo.share.wechat.WeChatManager;
 public class ShareSdkManager implements IShare {
 
     private volatile static ShareSdkManager _Instance = null;
-    private Activity mActivity;
+    private SoftReference<Activity> mActivitySoftReference;
     private IShare mShareManager;
 
     private ShareSdkManager(Activity activity) {
-        this.mActivity = activity;
+        mActivitySoftReference = new SoftReference<Activity>(activity);
     }
 
     public static ShareSdkManager getInstance(Activity activity) {
@@ -48,13 +50,13 @@ public class ShareSdkManager implements IShare {
     private IShare getShareManager(SharePlatform platform) {
         switch (platform) {
             case QQ:
-                return new TencentManager(mActivity);
+                return new TencentManager(mActivitySoftReference.get());
             case WeChat:
-                return new WeChatManager(mActivity);
+                return new WeChatManager(mActivitySoftReference.get());
             case System:
-                return new SystemManager(mActivity);
+                return new SystemManager(mActivitySoftReference.get());
             default:
-                return new WeChatManager(mActivity);
+                return new WeChatManager(mActivitySoftReference.get());
         }
     }
 }

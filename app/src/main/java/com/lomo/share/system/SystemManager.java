@@ -13,6 +13,7 @@ import com.lomo.share.Utils;
 import com.lomo.utils.StringUtils;
 
 import java.io.File;
+import java.lang.ref.SoftReference;
 
 /**
  * Created by Administrator on 2017/4/12.
@@ -22,11 +23,11 @@ public class SystemManager implements IShare {
     public static final int SHARE_SMS_REQUEST_CODE = 1002;
     public static final int SHARE_EMAIL_REQUEST_CODE = 1001;
 
-    private Activity mActivity;
+    private SoftReference<Activity> mActivitySoftReference;
     private ShareListener mListener;
 
     public SystemManager(Activity activity) {
-        this.mActivity = activity;
+        mActivitySoftReference = new SoftReference<Activity>(activity);
     }
 
     @Override
@@ -74,7 +75,7 @@ public class SystemManager implements IShare {
             smsIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(entity.getImgUrl())));
         }
 
-        mActivity.startActivityForResult(smsIntent, SHARE_SMS_REQUEST_CODE);
+        mActivitySoftReference.get().startActivityForResult(smsIntent, SHARE_SMS_REQUEST_CODE);
     }
 
     /**
@@ -93,6 +94,6 @@ public class SystemManager implements IShare {
         emailIntent.putExtra(Intent.EXTRA_TEXT, entity.getContent());
         emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        mActivity.startActivityForResult(emailIntent, SHARE_EMAIL_REQUEST_CODE);
+        mActivitySoftReference.get().startActivityForResult(emailIntent, SHARE_EMAIL_REQUEST_CODE);
     }
 }
