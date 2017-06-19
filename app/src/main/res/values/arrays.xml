@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="loading_anim">
+        <item>@drawable/loading1</item>
+        <item>@drawable/loading2</item>
+        <item>@drawable/loading3</item>
+        <item>@drawable/loading4</item>
+        <item>@drawable/loading5</item>
+        <item>@drawable/loading6</item>
+        <item>@drawable/loading7</item>
+        <item>@drawable/loading8</item>
+        <item>@drawable/loading9</item>
+        <item>@drawable/loading10</item>
+        <item>@drawable/loading11</item>
+        <item>@drawable/loading12</item>
+        <item>@drawable/loading13</item>
+        <item>@drawable/loading14</item>
+        <item>@drawable/loading15</item>
+        <item>@drawable/loading16</item>
+        <item>@drawable/loading17</item>
+        <item>@drawable/loading18</item>
+        <item>@drawable/loading19</item>
+        <item>@drawable/loading20</item>
+        <item>@drawable/loading21</item>
+        <item>@drawable/loading22</item>
+        <item>@drawable/loading23</item>
+        <item>@drawable/loading24</item>
+        <item>@drawable/loading25</item>
+        <item>@drawable/loading26</item>
+        <item>@drawable/loading27</item>
+        <item>@drawable/loading28</item>
+        <item>@drawable/loading29</item>
+        <item>@drawable/loading30</item>
+        <item>@drawable/loading31</item>
+        <item>@drawable/loading32</item>
+        <item>@drawable/loading33</item>
+        <item>@drawable/loading34</item>
+        <item>@drawable/loading35</item>
+        <item>@drawable/loading36</item>
+    </string-array>
+</resources>
