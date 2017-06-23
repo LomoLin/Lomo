@@ -2,7 +2,7 @@ package com.lomo.share;
 
 /**
  * @desc
- * @autor ZhuangXiong
+ * @autor Lomo
  * @time 2017/2/6 15:12
  */
 

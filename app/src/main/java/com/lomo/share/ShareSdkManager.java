@@ -11,7 +11,7 @@ import java.lang.ref.SoftReference;
 
 /**
  * @desc
- * @autor ZhuangXiong
+ * @autor Lomo
  * @time 2017/2/6 15:11
  */
 
