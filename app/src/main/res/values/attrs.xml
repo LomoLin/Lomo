@@ -31,4 +31,8 @@
         <!-- 刮刮卡线条宽度 -->
         <attr name="eraser_width" format="dimension"></attr>
     </declare-styleable>
+    <declare-styleable name="StrokeTextView">
+        <attr name="stvStrokeWidth" format="float"/>
+        <attr name="stvStokeColor" format="color"/>
+    </declare-styleable>
 </resources>
